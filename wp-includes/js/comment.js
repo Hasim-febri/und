@@ -3,7 +3,7 @@ var api =  'https://script.google.com/macros/s/AKfycbyV1YBa7YH2icjC8qa9S0yH03Clp
 export const comentarService = {
     getComentar: async function () {
     try {
-        const res = await fetch(data.api);
+        const res = await fetch(api);
         const result = await res.json();
 
         // console.log("API RAW:", result);
