@@ -395,8 +395,8 @@ margin: 10px 0px 0px 0px!important;
 				</div>
 				<div class="elementor-element elementor-element-46049ccf profil af zoom-out elementor-widget elementor-widget-image" data-id="46049ccf" data-element_type="widget" data-widget_type="image.default">
 				<div class="elementor-widget-container">
-															<img fetchpriority="high" decoding="async" width="1000" height="1283" src="./image/couple1.jpeg" class="attachment-full size-full wp-image-29337" alt="" 
-															srcset="./image/couple1.jpeg 1000w, ./image/couple1.jpeg 234w, ./image/couple1.jpeg 798w, ./image/couple1.jpeg 768w" sizes="(max-width: 1000px) 100vw, 1000px" />															</div>
+															<img fetchpriority="high" decoding="async" width="1000" height="1283" src="./image/couple2.jpeg" class="attachment-full size-full wp-image-29337" alt="" 
+															srcset="./image/couple2.jpeg 1000w, ./image/couple2.jpeg 234w, ./image/couple2.jpeg 798w, ./image/couple2.jpeg 768w" sizes="(max-width: 1000px) 100vw, 1000px" />															</div>
 				</div>
 				<div class="elementor-element elementor-element-542845a8 af slide-up elementor-widget elementor-widget-heading" data-id="542845a8" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
@@ -408,7 +408,9 @@ margin: 10px 0px 0px 0px!important;
 				</div>
 				<div class="elementor-element elementor-element-31a5037e af slide-up elementor-widget elementor-widget-heading" data-id="31a5037e" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Nama Tamu</h2>				</div>
+					<h2 class="elementor-heading-title elementor-size-default" id="nama_tamu"></h2>
+					<h2 class="elementor-heading-title elementor-size-default" id="alamat"></h2>
+				</div>
 				</div>
 				<div class="elementor-element elementor-element-8bace40 elementor-align-center af slide-up elementor-widget elementor-widget-button" data-id="8bace40" data-element_type="widget" id="open" data-widget_type="button.default">
 				<div class="elementor-widget-container">
@@ -461,7 +463,7 @@ margin: 10px 0px 0px 0px!important;
 					<h2 class="elementor-heading-title elementor-size-default">30 MEI 2026</h2>				</div>
 				</div>
 				<div class="elementor-element elementor-element-ff77cd5 elementor-align-center animated-slow elementor-invisible elementor-widget elementor-widget-button" data-id="ff77cd5" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;,&quot;_animation_delay&quot;:10000}" data-widget_type="button.default">
-				<div class="elementor-widget-container">
+				<div class="elementor-widget-container" hidden>
 									<div class="elementor-button-wrapper">
 					<a class="elementor-button elementor-button-link elementor-size-xs" href="#date">
 						<span class="elementor-button-content-wrapper">
@@ -487,7 +489,7 @@ margin: 10px 0px 0px 0px!important;
 		<div class="elementor-element elementor-element-37ff8633 e-con-full e-flex e-con e-child" data-id="37ff8633" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 				<div class="elementor-element elementor-element-c1c3fb1 ef  slide-down elementor-widget elementor-widget-heading" data-id="c1c3fb1" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">C % H</h2>
+					<h2 class="elementor-heading-title elementor-size-default">C & H</h2>
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-681acc9f ef slide-up elementor-widget elementor-widget-heading" data-id="681acc9f" data-element_type="widget" data-widget_type="heading.default">
@@ -596,7 +598,7 @@ margin: 10px 0px 0px 0px!important;
 				</div>
 				<div class="elementor-element elementor-element-436ae91e ef  slide-down elementor-widget elementor-widget-heading" data-id="436ae91e" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Save The Date</h2>				
+					<!-- <h2 class="elementor-heading-title elementor-size-default">Save The Date</h2>				 -->
 				</div>
 				</div>
 				<div class="elementor-element elementor-element-4f3a6817 ef  slide-down elementor-widget elementor-widget-heading" data-id="4f3a6817" data-element_type="widget" data-widget_type="heading.default">
@@ -911,7 +913,7 @@ margin: 10px 0px 0px 0px!important;
 					</div>
 
 					<div class="input-group">
-						<span class="input-icon">👤</span>
+						<span class="input-icon"></span>
 
 						<input
 						id="name"
@@ -1363,7 +1365,31 @@ margin: 10px 0px 0px 0px!important;
 					</div>
 				</div>
 			</div>
+						<script>
+						const params = new URLSearchParams(window.location.search);
 
+						const nama = params.get("nama");
+						const alamat = params.get("alamat");
+						const nama1 = document.getElementById("nama_tamu");
+						const alamat1 = document.getElementById("alamat");
+						const name = document.getElementById("name");
+
+						console.log(nama,alamat);
+
+						if (nama) {
+							nama1.innerText = nama;
+							name.value = nama;
+						}else{
+							nama1.innerText = "Semua Teman";
+							name.value = "";
+						}
+
+						if (alamat) {
+							alamat1.innerText = "di "+alamat;
+						}else{
+							alamat1.innerText = "di Tempat";
+						}
+						</script>
 						<script>
 					jQuery("document").ready(function($) {
 						var e = window.settingAutoplay;

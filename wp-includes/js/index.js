@@ -2,6 +2,14 @@
 
 import { comentarService } from "./comment.js";
 import { data } from "./data.js";
+import {
+    formattedDate,
+    formattedName,
+    generateRandomColor,
+    generateRandomId,
+    getCurrentDateTime,
+    renderElement
+} from "./helper.js";
 
 let currentPage = 1;
 let allData = [];
@@ -155,9 +163,13 @@ async function submitForm() {
   }
 
   await comentarService.addComentar({
+    id: generateRandomId(),
     name,
     message,
     status,
+    date: getCurrentDateTime(),
+    color: generateRandomColor(),
+
   });
 
   document.getElementById("name").value = "";
