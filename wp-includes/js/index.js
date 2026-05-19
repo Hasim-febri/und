@@ -172,7 +172,6 @@ async function submitForm() {
 
   });
 
-  document.getElementById("name").value = "";
   document.getElementById("message").value = "";
   document.getElementById("status").selectedIndex = 0;
 
